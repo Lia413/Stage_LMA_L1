@@ -9,13 +9,13 @@ def solution_analytique(t):
     Em = 0
 
     if beta ** 2 > 1:
-        # Cas 1: oscillations amorties
+        # Avec oscillations amorties
         r1 = omega_0 * (np.sqrt(beta ** 2 - 1) - beta)
         r2 = omega_0 * (-np.sqrt(beta ** 2 - 1) - beta)
-        # Calcul des coefficients A et B
+        # Calcul des coefficients
         A = (v_0 - r2 * u_0) / (r1 - r2)
         B = (u_0 * r1 - v_0) / (r1 - r2)
-        # Calcul de u et v
+        # Calcul des positions et vitesses
         u = A * np.exp(r1 * t) + B * np.exp(r2 * t)
         v = r1 * A * np.exp(r1 * t) + r2 * B * np.exp(r2 * t)
         # Calcul des énergies
@@ -25,7 +25,7 @@ def solution_analytique(t):
         return (u, v, Ec, Ep, Em)
 
     if beta ** 2 == 1:
-        # Cas 2: oscillations critiques
+        # Avec oscillations dans le cas critique
         r = -beta * omega_0
         # Calcul des coefficients A et B
         A = v_0 + beta * omega_0 * u_0
@@ -40,7 +40,7 @@ def solution_analytique(t):
         return (u, v, Ec, Ep, Em)
 
     if beta ** 2 < 1:
-        # Cas 3: oscillations non amorties
+        # Avec oscillations non amorties
         mu = omega_0 * np.sqrt(1 - beta ** 2)
         # Calcul des coefficients A et B
         A = (v_0 + u_0 * beta * omega_0) / mu
