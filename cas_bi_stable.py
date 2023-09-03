@@ -108,11 +108,6 @@ def energie(nombre_de_points, methode):
 positions_trap, vitesses_trap = J_trap(nombre_de_points)
 positions_euler, vitesses_euler = J_euler_implicite(nombre_de_points)
 
-positions_trap_lim, vitesses_trap_lim = J_trap_lim(nombre_de_points)
-positions_euler_lim, vitesses_euler_lim = J_euler_implicite_lim(nombre_de_points)
-
-positions_trap_lim_b, vitesses_trap_lim_b = J_trap_lim_b(nombre_de_points)
-positions_euler_lim_b, vitesses_euler_lim_b = J_euler_implicite_lim_b(nombre_de_points)
 
 # Calcul des énergies
 Em_tr, Ec_tr, Ep_tr = energie(nombre_de_points, "trapèzes")
