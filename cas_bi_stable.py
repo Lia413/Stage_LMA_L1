@@ -24,7 +24,7 @@ def Jacobienne(U):
 
 ##############################################################################################
 
-#                                Jacobienne et Newton Raphson                               #
+#                                            Jacobienne                                      #
 
 ##############################################################################################
 
@@ -47,39 +47,6 @@ def J_trap(N):
     return liste_positions, liste_vitesses
 
 
-def J_trap_lim(N):
-    U = Mat_U()
-    liste_positions = [U[0, 0]]
-    liste_vitesses = [U[1, 0]]
-
-    A = Mat_Id - 0.5 * delta_temps * S
-    inv_A = np.linalg.inv(A)
-    B = Mat_Id + 0.5 * delta_temps * S
-
-    for i in range(1, N):
-        U_n = inv_A @ B @ U
-        U = U_n
-        liste_positions.append(U[0, 0])
-        liste_vitesses.append(U[1, 0])
-
-    return liste_positions, liste_vitesses
-
-
-def J_trap_lim_b(N):
-    U = Mat_U()
-    liste_positions = [U[0, 0]]
-    liste_vitesses = [U[1, 0]]
-
-    A = Mat_Id - 0.5 * delta_temps * S
-    inv_A = np.linalg.inv(A)
-
-    for i in range(1, N):
-        U_n = U + delta_temps * inv_A @ S @ U
-        U = U_n
-        liste_positions.append(U[0, 0])
-        liste_vitesses.append(U[1, 0])
-
-    return liste_positions, liste_vitesses
 
 
 def J_euler_implicite(N):
@@ -98,36 +65,8 @@ def J_euler_implicite(N):
     return liste_positions, liste_vitesses
 
 
-def J_euler_implicite_lim(N):
-    U = Mat_U()
-    liste_positions = [U[0, 0]]
-    liste_vitesses = [U[1, 0]]
-
-    A = Mat_Id - delta_temps * S
-
-    for i in range(1, N):
-        U_n = np.linalg.inv(A) @ U
-        U = U_n
-        liste_positions.append(U[0, 0])
-        liste_vitesses.append(U[1, 0])
-
-    return liste_positions, liste_vitesses
 
 
-def J_euler_implicite_lim_b(N):
-    U = Mat_U()
-    liste_positions = [U[0, 0]]
-    liste_vitesses = [U[1, 0]]
-
-    A = Mat_Id - delta_temps * S
-
-    for i in range(1, N):
-        U_n = U + delta_temps * np.linalg.inv(A) @ S @ U
-        U = U_n
-        liste_positions.append(U[0, 0])
-        liste_vitesses.append(U[1, 0])
-
-    return liste_positions, liste_vitesses
 
 
 def energie(nombre_de_points, methode):
