@@ -182,7 +182,7 @@ def energie(liste_pos, liste_vit):
         liste_Em.append(liste_Ec[i] + liste_Ep[i])
     return liste_Ep, liste_Ec, liste_Em
 
-
+#résultats
 pos, vit, liste_F = trap(nombre_de_points)
 Ep, Ec, Em = energie(pos, vit)
 #print(pos)
