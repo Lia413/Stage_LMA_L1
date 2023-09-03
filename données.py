@@ -69,15 +69,15 @@ Mat_S_ligne1 = np.concatenate((Nulle, Mat_I), axis=1)
 Mat_S_ligne2 = np.concatenate((-1 / m * Mat_K, -2 * beta * omega_0 * Mat_I), axis=1)
 Mat_S = np.concatenate((Mat_S_ligne1, Mat_S_ligne2), axis=0)
 # print("mat_S", Mat_S)
-####si ça plante j'ai changer -omega0**2 par -k*1/m
 
 
-# on cherche à connaitre les valeurs propres et vecteurs propres de K_barre afin d'obtenir la solution analytique pour n ressorts.
+
+# on cherche à connaitre les valeurs propres et vecteurs propres de K pour la démonstration résolvant analytiquement le cas NDDL
 inv_Mat_M = np.linalg.inv(m * Mat_I)
-Mat_K_barre = np.dot(inv_Mat_M, Mat_K)
+
 
 valp, vecp = np.linalg.eig(Mat_K)
 
 # print("valp", valp)
 # print("vecp", vecp)
-omega_2 = np.sqrt(valp[0])
+omega_2 = np.sqrt(valp[0]) # on teste avec une valeur propre de la matrice cas pour voir si on obtient un cas limite
