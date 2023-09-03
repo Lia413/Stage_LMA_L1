@@ -239,16 +239,14 @@ def energie_mécanique(méthode, force,Niter):
 
 
 def erreur(nbr, methode, force):
-    erreur = 0
-
+    erreur_i_true=[]
+    erreur_i=[]
     for i in range(nbr):
-        # Calcul de l'erreur quadratique pour chaque point et pondération par le pas de temps
-        erreur_i = np.abs(
-            methode(force,nbr)[0][i] - solution_analytique(i * delta_temps)[0]
+        erreur_i.append(
+            methode(force,nbr)[0][i])
+        erreur_i_true.append(solution_analytique(i * delta_temps)[0]
         )
-        erreur += erreur_i*np.sqrt(delta_temps)
-    erreur = np.sqrt(erreur)  # Calcul de la racine carrée de l'erreur
-    return np.log(erreur)
+    return np.log(np.square(np.subtract(erreur_i_true,erreur_i)).mean())
 
 
 # Mettez un hashtag devant les lignes que vous ne voulez pas afficher
