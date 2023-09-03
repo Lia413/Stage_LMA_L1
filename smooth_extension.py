@@ -1,6 +1,7 @@
 from données import *
 
-
+#on calcule pour NDDL et on met tous les termes de l'énergie potentielle avec effet non-locaux
+#car s'il n'y en a pas on a juste à mettre kse=0
 def Mat_F(U):
     F = np.array([[0.0] for i in range(2 * nombre_de_ressorts)])
     for j in range(nombre_de_ressorts):
