@@ -26,7 +26,7 @@ plt.ylabel("y")
 plt.title("Evolution de la dérivée de l'énergie")
 plt.legend()
 
-
+#partie qui permet de tracer proprement l'intersection de la courbe avec l'abscisse
 intersection_points = []
 for i in range(len(x)):
     if abs(d_energie_pot()[i] - y[i][0]) < 0.005:
