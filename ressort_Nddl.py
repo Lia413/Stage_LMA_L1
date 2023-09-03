@@ -94,7 +94,7 @@ def ressort_NDDL(methode, N, force, k):
         return (liste_positions, liste_vitesses)
 
 
-# Appel de la fonction ressort_NDDL avec la méthode "trapèzes" et le nombre de points désiré
+# Résultats
 resultat = ressort_NDDL("trapèzes", nombre_de_points, "", 0)
 liste_positions = resultat[0]
 liste_vitesses = resultat[1]
