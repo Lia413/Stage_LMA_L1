@@ -43,10 +43,10 @@ nddl = 20  # Taille de la matrice K
 Mat_K = np.zeros((nddl, nddl))  # Initialisation de la matrice K
 
 for i in range(nddl):
-    Mat_K[i, i] = 2  # Diagonale principale
+    Mat_K[i, i] = 2  # Diagonale 
 
     if i > 0:
-        Mat_K[i, i - 1] = -1  # Termes à gauche de la diagonale principale
+        Mat_K[i, i - 1] = -1  # Termes à gauche de la diagonale 
 
     if i < nddl - 1:
-        Mat_K[i, i + 1] = -1  # Termes à droite de la diagonale principale
+        Mat_K[i, i + 1] = -1  # Termes à droite de la diagonale 
