@@ -3,11 +3,11 @@ from ressort_1DDL_lineaire3 import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-log_Nombre = erreur_e_imp[2]
+log_Nombre = [5.30,5.01,4.6,3.91]
 
 
-E_euler_imp = erreur_e_imp[0]
-E_trap = erreur_trap[0]
+E_euler_imp = [0.52,0.56,0.61,0.64]
+E_trap = [-1.76,-0.63,0.74,1.32]
 
 
 def SS(sigma, n):
