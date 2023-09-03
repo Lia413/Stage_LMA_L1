@@ -254,5 +254,5 @@ def erreur(nbr, methode, force):
 print("logN", np.log(Niter))
 
 
-print("erreur e imp", erreur(Niter, euler_implicite, ""))
-print("erreur trap", erreur(Niter, trapèzes, ""))
+print("log erreur e imp", erreur(Niter, euler_implicite, ""))
+print("log erreur trap", erreur(Niter, trapèzes, ""))
