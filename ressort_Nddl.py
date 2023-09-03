@@ -21,7 +21,7 @@ def energie(W):
     return (Ec, Ep, Em)
 
 
-def ressort_NDDL(methode, N, force, k):
+def ressort_NDDL(methode, N, force, i):
     # Initialisation des conditions initiales                      # N = nb de points
     U = np.zeros(2 * nombre_ressorts)
     U[0] = u_0
